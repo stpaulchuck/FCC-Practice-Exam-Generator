@@ -1,10 +1,10 @@
-**FCC Practice Exam Generator**
+# **FCC Practice Exam Generator**
 
-**Introduction**
+## **Introduction**
 
 I built these two applications so I could practice up for the three FCC exams (Technician, General, and Amateur Extra) for the Radio Amateur Service license (Ham Radio). I recently updated them and parsed in the latest exam pools. The FCC kindly gives you documents containing every exam question. The only problem is that they never proof read them and so they are a disaster for parsing. I had to invent all sorts of tricks and workarounds to get the questions into the database for the generator to use.
 
-**About the projects**
+## **About the projects**
 
 This project contains two programs: the text question pool document parser, and the practice exam generator. I am uploading a source file folder containing a Visual Studio 2017 solution which contains the two projects. I've clipped off all the stuff below the source code folder level as you don't need it to work with the solution initially and it will keep the download size reasonable. You can pull this solution into VS2017 and then compile. Note that I have set the projects to use .Net 4.7.2 (the latest as of this time). Make sure you have it installed.
 
@@ -22,6 +22,6 @@ The second is SQLite Manager: <https://sourceforge.net/projects/sqliteman/>
 
 If you are not familiar with these helper apps please read up their documentation. There's little annoying gotchas like SQLite can't drop columns. There's a work around for it but you have to read. I have already created the database file and tables for you so you don't need to but if it gets blow away you can easily manually create it. I have included the SQLitel FCC exam database create.sq file to use for that. Just open it into the sql window and execute it. You do have to create the database file itself manually but the tables and columns can be created from the SQLitel FCC exam database create.sql file.
 
-**What's next**
+## **What's next**
 
 After I get this project settled down into GitHub I will move on to my other, similar project for the General Radio Operator License, the new version of the old First Class Radiotelephone license. Then I've got a third one, File Renamer, to put into another repository. All that should keep me busy for a while. Once the dust settles on all that I'm headed back into machine learning. I spent a year researching all the Ph.D papers I could find and then learned Python and a dozen API's like scikit_learn. I've gotten some decent results programmatically but I was getting burn-out so I moved to these projects to clear my head. I am now ready to get into some fuzzy math architecture which apparently has been improving results on time series data -- the holy grail of statistics and machine learning. The other interesting architecture is reservoir ensembles mated up with both regression and classification ANN's.
