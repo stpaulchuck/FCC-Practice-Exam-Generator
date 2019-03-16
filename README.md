@@ -1,5 +1,8 @@
 # **FCC Practice Exam Generator**
 
+![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
+
 ## **Introduction**
 
 I built these two applications so I could practice up for the three FCC exams (Technician, General, and Amateur Extra) for the Radio Amateur Service license (Ham Radio). I recently updated them and parsed in the latest exam pools. The FCC kindly gives you documents containing every exam question. The only problem is that they never proof read them and so they are a disaster for parsing. I had to invent all sorts of tricks and workarounds to get the questions into the database for the generator to use.
@@ -21,6 +24,17 @@ The first helper I used (a lot!) is DB Browser for SQLite: [https://sqlitebrowse
 The second is SQLite Manager: <https://sourceforge.net/projects/sqliteman/>
 
 If you are not familiar with these helper apps please read up their documentation. There's little annoying gotchas like SQLite can't drop columns. There's a work around for it but you have to read. I have already created the database file and tables for you so you don't need to but if it gets blown away you can easily manually create it. I have included the SQLite FCC exam database create.sql file to use for that. Just open it into the sql window and execute it. You do have to create the database file itself manually but the tables and columns can be created from the SQLite FCC exam database create.sql file.
+
+
+## License
+
+FCC Practice Exam Generator project is licensed under GNU GENERAL PUBLIC LICENSE Version 3.
+
+## Contribution
+
+To report an issue use the GitHub issue tracker. Please provide as much information as you can.
+Contributions are always welcome. Open an issue to contact me. The preferred method of contribution is through a github pull request. 
+
 
 ## **What's next**
 
