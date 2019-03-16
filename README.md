@@ -20,7 +20,7 @@ The first helper I used (a lot!) is DB Browser for SQLite: [https://sqlitebrowse
 
 The second is SQLite Manager: <https://sourceforge.net/projects/sqliteman/>
 
-If you are not familiar with these helper apps please read up their documentation. There's little annoying gotchas like SQLite can't drop columns. There's a work around for it but you have to read. I have already created the database file and tables for you so you don't need to but if it gets blow away you can easily manually create it. I have included the SQLitel FCC exam database create.sq file to use for that. Just open it into the sql window and execute it. You do have to create the database file itself manually but the tables and columns can be created from the SQLitel FCC exam database create.sql file.
+If you are not familiar with these helper apps please read up their documentation. There's little annoying gotchas like SQLite can't drop columns. There's a work around for it but you have to read. I have already created the database file and tables for you so you don't need to but if it gets blow away you can easily manually create it. I have included the SQLite FCC exam database create.sq file to use for that. Just open it into the sql window and execute it. You do have to create the database file itself manually but the tables and columns can be created from the SQLitel FCC exam database create.sql file.
 
 ## **What's next**
 
