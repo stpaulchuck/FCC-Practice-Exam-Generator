@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{361F4712-0B15-4493-9964-E704AE307BA3}</ProjectGuid>
+    <ProjectGuid>{651B75D9-3B42-45F6-89F6-2D4FC69EB2C8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestPoolParser</RootNamespace>

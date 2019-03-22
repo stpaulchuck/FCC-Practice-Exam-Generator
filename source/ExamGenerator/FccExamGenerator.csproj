@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F8B63B26-68E3-44BA-B14C-5BE76A740B88}</ProjectGuid>
+    <ProjectGuid>{421D3742-583B-42EE-9500-C8649A7439EE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExamGenerator</RootNamespace>
