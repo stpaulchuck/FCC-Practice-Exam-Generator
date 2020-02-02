@@ -162,23 +162,20 @@
   <ItemGroup>
     <Content Include="PAGE10.ICO" />
     <Content Include="PENCIL.ICO" />
-    <None Include="Resources\Tech Pool graphic T11.jpg" />
-    <None Include="Resources\Tech Pool graphic T3.jpg" />
-    <None Include="Resources\Tech Pool graphic T2.jpg" />
-    <None Include="Resources\Tech Pool graphic T1.jpg" />
-    <None Include="Resources\General Pool graphic G7-1.jpg" />
-    <None Include="Resources\Extra Pool graphic E9-3.jpg" />
-    <None Include="Resources\Extra Pool graphic E9-2.jpg" />
-    <None Include="Resources\Extra Pool graphic E9-1.jpg" />
-    <None Include="Resources\Extra Pool graphic E7-4.jpg" />
-    <None Include="Resources\Extra Pool graphic E7-3.jpg" />
-    <None Include="Resources\Extra Pool graphic E7-2.jpg" />
-    <None Include="Resources\Extra Pool graphic E7-1.jpg" />
-    <None Include="Resources\Extra Pool graphic E6-4.jpg" />
-    <None Include="Resources\Extra Pool graphic E6-3.jpg" />
-    <None Include="Resources\Extra Pool graphic E6-2.jpg" />
-    <None Include="Resources\Extra Pool graphic E6-1.jpg" />
-    <None Include="Resources\Extra Pool graphic E5-2.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E6_1.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E6_2.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E6_3.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E7_1.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E7_2.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E7_3.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E9_1.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E9_2.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic_E9_3.jpg" />
+    <Content Include="QuestionGraphics\Extra_Pool_graphic__E5_1.jpg" />
+    <Content Include="QuestionGraphics\General_Pool_graphic_G7_1.jpg" />
+    <Content Include="QuestionGraphics\Tech_Pool_graphic_T1.jpg" />
+    <Content Include="QuestionGraphics\Tech_Pool_graphic_T2.jpg" />
+    <Content Include="QuestionGraphics\Tech_Pool_graphic_T3.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

@@ -164,12 +164,13 @@ namespace ExamGenerator
 					sFileName = sFileName.Substring(0, sFileName.IndexOf("."));
 				}
 				sFileName = sFileName.Replace(" ", "_");
-				sFileName = sFileName.Replace("-", "_");
+				//sFileName = sFileName.Replace("-", "_");
 				if (oTQ.QuestionNumber[0] == 'E') sFileName = "Extra_Pool_graphic" + sFileName.Substring(sFileName.LastIndexOf("_"));
 				if (oTQ.QuestionNumber[0] == 'G') sFileName = "General_Pool_graphic" + sFileName.Substring(sFileName.LastIndexOf("_"));
 				if (oTQ.QuestionNumber[0] == 'T') sFileName = "Tech_Pool_graphic" + sFileName.Substring(sFileName.LastIndexOf("_"));
 				GraphicDisplayForm = new frmGraphicDisplayForm();
-				GraphicDisplayForm.GraphicToShow = (Image)Properties.Resources.ResourceManager.GetObject(sFileName);
+				//GraphicDisplayForm.GraphicToShow = (Image)Properties.Resources.ResourceManager.GetObject(sFileName);
+				GraphicDisplayForm.GraphicToShow = Image.FromFile(Application.StartupPath + "\\QuestionGraphics\\" + sFileName + ".jpg");
 				GraphicDisplayForm.Show();
 			}
 		}

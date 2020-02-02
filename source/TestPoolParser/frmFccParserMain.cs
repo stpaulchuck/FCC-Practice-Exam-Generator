@@ -212,7 +212,7 @@ namespace TestPoolParser
 			Properties.Settings.Default.LastExamElement = (int)iElementNumber;
 			Properties.Settings.Default.Save();
 			btnRun.Enabled = true;
-			txtStatus.Text = "Completed parsing run successfully.";
+			txtStatus.Text = "Completed parsing run successfully. " + QuestionsCommandList.Count + " questions saved.";
 		}
 
 		//********************** private methods ***********************
@@ -331,6 +331,16 @@ namespace TestPoolParser
 			iElementNumber = int.Parse(cmbElementNumber.Text);
 			Properties.Settings.Default.LastExamElement = iElementNumber;
 			Properties.Settings.Default.Save();
+		}
+
+		private void btnReloadFile_Click(object sender, EventArgs e)
+		{
+			if (!LoadSourceFile(sCurrentInputFilePath))
+			{
+				txtFileName.Text = "{ no file loaded }";
+				cmbElementNumber.Text = "0";
+				return;
+			}
 		}
 
 		private void FindInputFile()

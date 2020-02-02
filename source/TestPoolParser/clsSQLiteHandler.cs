@@ -43,6 +43,7 @@ namespace TestPoolParser
 			string sCmd = "";
 
 			SQLiteCommand oCmd = new SQLiteCommand(oConn);
+			SQLiteTransaction oTR = null;
 
 			//---- clear old data from tables
 			string sElementNumber = m_ElementNumber.ToString("0");
@@ -57,6 +58,7 @@ namespace TestPoolParser
 			int iDescriptionCount = m_DescriptionsCommandList.Count;
 			try
 			{
+				oTR = oConn.BeginTransaction();
 				
 				for (int iIndexer = 0; iIndexer < iQuestionCount;iIndexer++)
 				{
@@ -87,9 +89,11 @@ namespace TestPoolParser
 					oCmd.CommandText = sCmd;
 					oCmd.ExecuteNonQuery();
 				}
+				oTR.Commit();
 			}
 			catch (Exception e3)
 			{
+				oTR.Rollback();
 				if (oConn != null)
 					if (oConn.State == System.Data.ConnectionState.Open)
 						oConn.Close();

@@ -48,6 +48,7 @@ namespace TestPoolParser
 			StringReader sReader = new StringReader(DocumentText);
 			string aLine = sReader.ReadLine();
 			Match oMatch = null;
+			List<string> qList = new List<string>();
 
 			try
 			{
@@ -65,10 +66,8 @@ namespace TestPoolParser
 								sGraphicFileName = "";
 								if (aLine.Substring(0, 3) == sGroup) // it's a question number for this subgroup
 								{
-									List<string> qList = new List<string>
-									{
-										aLine
-									};
+									qList.Clear();
+									qList.Add(aLine);
 									aLine = sReader.ReadLine();
 									oMatch = Regex.Match(aLine, @"[Ff]igure [EGT]-?\d+-?\d*", RegexOptions.None);
 									if (oMatch.Success)
