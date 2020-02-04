@@ -1,6 +1,6 @@
 # Using The Exam Generator Program
 
-!["Main Form"]([1])
+!["Main Form"](./docgraphics/ExamGeneratorMainForm.jpg)
 
 
 
@@ -16,5 +16,3 @@
 
 
 
-
-[1]: docgraphics/ExamGeneratorMainForm.jpg
