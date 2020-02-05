@@ -32,7 +32,6 @@ namespace TestPoolParser
 		public frmFccParserMain()
 		{
 			InitializeComponent();
-			//oTextHandler = new clsTextOutputHandler();
 			oSQLiteHandler = new clsSQLiteHandler(txtStatus);
 			oDocParser = new clsFcclDocParser(txtStatus);
 			bInitializing = false;
@@ -196,7 +195,7 @@ namespace TestPoolParser
 				oDocParser.DescriptionsCommands = DescriptionsCommandList;
 				oDocParser.QuestionsCommands = QuestionsCommandList;
 				oDocParser.ParseTextFile(sDocumentText);  //, rbOutput2DB.Checked);
-				SaveQuestionsToMySQL();
+				SaveQuestionsToSQLite();
 			}
 			catch (Exception e5)
 			{
@@ -217,7 +216,7 @@ namespace TestPoolParser
 
 		//********************** private methods ***********************
 
-		private void SaveQuestionsToMySQL()
+		private void SaveQuestionsToSQLite()
 		{
 			txtStatus.Text = "Saving Data.";
 			//-------- set working values

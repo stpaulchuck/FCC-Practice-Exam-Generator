@@ -105,10 +105,16 @@ namespace TestPoolParser
 									if (splitArray.Length < 3)
 									{
 										txtStatus.Text = "ERROR in input file - subelement";
-										MessageBox.Show("Error in input file - subelement", "ERROR");
+										MessageBox.Show("Error in input file - subelement: " + aLine, "ERROR");
 										return;
 									}
 									sSubelement = splitArray[1];
+									if (!aLine.Contains("[") || !aLine.Contains("]"))
+									{
+										txtStatus.Text = "ERROR in input file - subelement: " + sSubelement;
+										MessageBox.Show("Error in input file - subelement: " + sSubelement, "ERROR");
+										return;
+									}
 									CreateDescriptionsCommands(aLine);
 								}
 								if (aLine.Substring(3, 1) == " " && aLine.Substring(0, 2) == sSubelement) // group description

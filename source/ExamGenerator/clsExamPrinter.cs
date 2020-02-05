@@ -99,18 +99,29 @@ namespace ExamGenerator
 			Dictionary<string, int> SubElementQuantity = new Dictionary<string, int>(); // standard number of q's per subelement
 			Dictionary<string, int> ElementGroupCount = new Dictionary<string, int>();
 			int iRunningTotal = 0, iAdjustmentValue = 0;
-			string[] saSplitter = new string[] { "-" };
-			string[] splitArray = { "", "" };
+			string[] splitArray = {};
+
+			char cEnDash = Convert.ToChar(150);
+			char cEmDash = Convert.ToChar(151);
+			char cOddness = Convert.ToChar(65533);
+			char[] caSplitter = new char[] { '-' };
+			//char[] caSplitter = new char[] { cEmDash, cEnDash, cOddness };
 
 			string sName = "", sTemp = "";
+			DataRow oRow2 = null;
 			try
 			{
 				foreach (DataRow oRow in GroupInfo)
 				{
+					oRow2 = oRow;
 					sName = oRow.Field<string>("SubElementName");
 					sTemp = oRow.Field<string>("DescriptiveText");
 					sTemp = sTemp.Substring(sTemp.LastIndexOf('[') + 1);
-					splitArray = sTemp.Split(saSplitter, StringSplitOptions.None);
+					splitArray = sTemp.Split(caSplitter);
+					if (splitArray.Length == 1)
+					{
+						splitArray = splitArray[0].ToString().Split(caSplitter);
+					}
 					sTemp = splitArray[0].Trim();
 					sTemp = sTemp.Substring(0, sTemp.IndexOf(' '));
 					int iHowManyQ = int.Parse(sTemp);
@@ -127,8 +138,8 @@ namespace ExamGenerator
 			}
 			catch (Exception e)
 			{
-				Debug.WriteLine(e);
-				throw;
+				Debug.WriteLine("SubElement: " + sName + " " + e);
+				throw new Exception("SubElement: " + sName + " " + oRow2.Field<string>("DescriptiveText") + " Throws Error: " + e.Message);
 			}
 			if (iRunningTotal == 0)
 				throw new Exception("no question count generated - ExamGenerator::EvenSelection()");

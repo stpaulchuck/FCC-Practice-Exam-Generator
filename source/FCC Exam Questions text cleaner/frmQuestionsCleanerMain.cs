@@ -96,7 +96,7 @@ namespace FCC_Exam_Questions_text_cleaner
                             Application.DoEvents();
                         }
                         // part of next line at the end? usually answer A tag "A."
-                        sTemp = QuestionFileAsStringArray[iIndexer].Substring(QuestionFileAsStringArray[iIndexer].LastIndexOf("?"));
+                        sTemp = QuestionFileAsStringArray[iIndexer].Substring(QuestionFileAsStringArray[iIndexer].LastIndexOf("?")).Trim();
                         if (sTemp.Length > 2) // " A." etc.
                         {
                             if ((oRegxQorphan.Match(sTemp)).Success)
