@@ -1,4 +1,6 @@
 
+2016-2020 FCC Element 4 Question Pool Effective for VEC Examinations on July 1, 2016 thru June 30, 2020
+
 
 SUBELEMENT E1 - COMMISSION’S RULES [6 Exam Questions - 6 Groups]
 
@@ -507,7 +509,8 @@ D. Destroy the application form
 
 E1E13 (B) [97.509]
 Which of these choices is an acceptable method for monitoring the applicants if a VEC opts to conduct an exam session remotely?
-A. Record the exam session on video tape for later review by the VE team
+A. Record the exam session on video tape for later review by the
+VE team
 B. Use a real-time video link and the Internet to connect the exam session to the observing VEs
 C. The exam proctor observes the applicants and reports any violations
 D. Have each applicant sign an affidavit stating that all session rules were followed
@@ -5411,7 +5414,8 @@ D. The driven element radiation resistance must be higher than the characteristi
 
 
 E9E06 (C)
-What is the equivalent lumped-constant network for a hairpin matching system of a 3-element Yagi?
+What is the equivalent lumped-constant network for a hairpin matching system of a
+3-element Yagi?
 A. Pi-network
 B. Pi-L-network
 C. A shunt inductor
@@ -5874,4 +5878,5 @@ A. Hearing loss caused by high voltage corona discharge
 B. Blood clotting from the intense magnetic field
 C. Localized heating of the body from RF exposure in excess of the MPE limits
 D. Ingestion of ozone gas from the cooling system
+
 
