@@ -17,7 +17,7 @@ The first one is .Net Regular Expression Designer: <https://download.cnet.com/NE
 
 The second is a grep program: <https://sourceforge.net/projects/grepwin/>
 
-I also used a very nice PDF to text application that really works: <https://www.4dots-software.com/free-pdf-to-text-converter/> My programs use plain text files as source and the early pool texts were in PDF form. The newest Amateur Extra pool from NVEC is in mulitple formats including MS Word.
+I also used a very nice PDF to text application that really works: <https://www.4dots-software.com/free-pdf-to-text-converter/> My programs use plain text files as source and the early pool texts were in PDF form. The newest Amateur Extra pool from NCVEC is in mulitple formats including MS Word.
 
 The other thing I used is SQLite database server. It is a very small and light weight and free application suitable for use in apps like this. Originally I wrote the apps to use MS SQL Server 2008. A while later I updated them to use MySQL server as it is free and freely available. A couple years later (present time) I was looking over the apps and decided to update them and rework some of the code. While MySQL is a fantastic DB server, it is way too much for a couple of apps like this. SQLite has come along and matured to the point it is stable and has interfaces for Visual Studio so I rewrote the DB interfaces to use it. Word of caution: I tried downloading from the source web site and tried installing it to the solution but it never seemed to work well. Instead I went to the VS2019 Nuget Manager and brought down the packages for SQLite and System.Data.SQLite. You'll wind up with some extraneous downloads in the packages but don't worry about it as they will not be in the compiled output.
 
