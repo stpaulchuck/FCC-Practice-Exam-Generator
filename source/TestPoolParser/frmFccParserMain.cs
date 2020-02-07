@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace TestPoolParser
 {
 	/*************************************************************************************************/
-	/*    FCC Exam Pool Parser, copyright © 2015, 2019 Charles H Fisher Jr., South St. Paul, MN      */
+	/*  FCC Exam Pool Parser, copyright © 2015, 2019, 2020 Charles H Fisher Jr., South St. Paul, MN  */
 	/*************************************************************************************************/
 	/*                   all rights reserved; you may use this code in your own                      */
 	/*                   projects but a reference to my copyright is required                 c       */
@@ -180,8 +180,8 @@ namespace TestPoolParser
 				btnRun.Enabled = true;
 				return;
 			}
-			//---- validate MySql connection works
-			if (!ValidateMySqlReady())
+			//---- validate SQLite connection works
+			if (!ValidateSQLiteReady())
 			{
 				txtStatus.Text = "Parse Cancelled";
 				MessageBox.Show(this, "Parse is cancelled.", "SQL Server Error");
@@ -411,7 +411,7 @@ namespace TestPoolParser
 
 */
 
-		private bool ValidateMySqlReady()
+		private bool ValidateSQLiteReady()
 		{
 			bool bResults = oSQLiteHandler.TestSQLiteConnection();
 			if (!bResults) btnRun.Enabled = true;

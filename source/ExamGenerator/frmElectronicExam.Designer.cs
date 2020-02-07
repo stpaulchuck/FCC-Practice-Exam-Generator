@@ -38,9 +38,9 @@
             this.btnPreviousQ = new System.Windows.Forms.Button();
             this.btnNextQ = new System.Windows.Forms.Button();
             this.lblCurrentQnum = new System.Windows.Forms.Label();
-            this.TQholder = new ExamGenerator.ucTestQuestionHolder();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.TQholder = new ExamGenerator.ucTestQuestionHolder();
             this.SuspendLayout();
             // 
             // lblTotalQ
@@ -141,15 +141,6 @@
             this.lblCurrentQnum.Text = "1";
             this.lblCurrentQnum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TQholder
-            // 
-            this.TQholder.AutoSize = true;
-            this.TQholder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.TQholder.Location = new System.Drawing.Point(43, 91);
-            this.TQholder.Name = "TQholder";
-            this.TQholder.Size = new System.Drawing.Size(698, 238);
-            this.TQholder.TabIndex = 6;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -171,17 +162,25 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // TQholder
+            // 
+            this.TQholder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.TQholder.Location = new System.Drawing.Point(61, 88);
+            this.TQholder.Name = "TQholder";
+            this.TQholder.Size = new System.Drawing.Size(698, 238);
+            this.TQholder.TabIndex = 12;
+            // 
             // frmElectronicExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 529);
+            this.Controls.Add(this.TQholder);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCurrentQnum);
             this.Controls.Add(this.btnNextQ);
             this.Controls.Add(this.btnPreviousQ);
-            this.Controls.Add(this.TQholder);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblCorrectQ);
             this.Controls.Add(this.label3);
@@ -210,11 +209,11 @@
         private System.Windows.Forms.Label lblIncorrectQ;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblCorrectQ;
-        private ucTestQuestionHolder TQholder;
         private System.Windows.Forms.Button btnPreviousQ;
         private System.Windows.Forms.Button btnNextQ;
         private System.Windows.Forms.Label lblCurrentQnum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
+        private ucTestQuestionHolder TQholder;
     }
 }

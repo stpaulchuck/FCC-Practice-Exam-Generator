@@ -10,7 +10,7 @@ using System.Diagnostics;
 namespace ExamGenerator
 {
 	/*************************************************************************************************/
-	/*      FCC Exam Generator, copyright © 2015, 2019 Charles H Fisher Jr., South St. Paul, MN      */
+	/*  FCC Exam Generator, copyright © 2015, 2019, 2020 Charles H Fisher Jr., South St. Paul, MN    */
 	/*************************************************************************************************/
 	/*                   all rights reserved; you may use this code in your own                      */
 	/*                   projects but a reference to my copyright is required                        */

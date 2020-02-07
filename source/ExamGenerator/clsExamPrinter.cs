@@ -101,11 +101,8 @@ namespace ExamGenerator
 			int iRunningTotal = 0, iAdjustmentValue = 0;
 			string[] splitArray = {};
 
-			char cEnDash = Convert.ToChar(150);
-			char cEmDash = Convert.ToChar(151);
-			char cOddness = Convert.ToChar(65533);
-			char[] caSplitter = new char[] { '-' };
-			//char[] caSplitter = new char[] { cEmDash, cEnDash, cOddness };
+			//char[] caSplitter = new char[] { '-' };
+			char[] caSplitter = new char[] { ' ' };
 
 			string sName = "", sTemp = "";
 			DataRow oRow2 = null;
@@ -116,18 +113,28 @@ namespace ExamGenerator
 					oRow2 = oRow;
 					sName = oRow.Field<string>("SubElementName");
 					sTemp = oRow.Field<string>("DescriptiveText");
+					if (!sTemp.ToUpper().Contains("QUESTION") || !sTemp.ToUpper().Contains("GROUP"))
+					{
+						MessageBox.Show("Error: Subelement " + sName + sTemp + " has issues.", "Parsing Error");
+						throw new Exception("Error: Subelement " + sName + sTemp + " has Parsing Error");
+					}
 					sTemp = sTemp.Substring(sTemp.LastIndexOf('[') + 1);
 					splitArray = sTemp.Split(caSplitter);
-					if (splitArray.Length == 1)
+					int iHowManyQ = -1;
+					int iHowManyG = -1;
+					for (int j = 0; j < splitArray.Length; j++)
 					{
-						splitArray = splitArray[0].ToString().Split(caSplitter);
+						if (iHowManyQ < 1)
+						{
+							int.TryParse(splitArray[j], out iHowManyQ);
+						}
+						else
+						{
+							if (int.TryParse(splitArray[j], out iHowManyG))
+							{ break; }
+						}
 					}
-					sTemp = splitArray[0].Trim();
-					sTemp = sTemp.Substring(0, sTemp.IndexOf(' '));
-					int iHowManyQ = int.Parse(sTemp);
-					sTemp = splitArray[1].Trim();
-					sTemp = sTemp.Substring(0, sTemp.IndexOf(' '));
-					int iHowManyG = int.Parse(sTemp);
+
 					if (iHowManyQ != iHowManyG) // code will have to be changed if this ever turns true
 						throw new Exception("number of questions not equal to number of subgroups - subelement " + sName);
 					int iQcount = (int)Math.Round(fRatio * (double)iHowManyQ);
@@ -164,7 +171,8 @@ namespace ExamGenerator
 					SubElementQuantity[sKey] = iNum;
 				}
 			}  // if irunningtotal != ihowmany
-				//--------- now get the question rows to return
+
+			//--------- now get the question rows to return
 			List<string> QnumList = new List<string>();
 
 			try
@@ -214,6 +222,11 @@ namespace ExamGenerator
 						}
 						qList.Clear();
 					}
+				}
+				if (retVal.Count != iHowMany)
+				{
+					// todo: output is one less than requested number of questions
+					throw new Exception("Selection Error: Output does not have as many questions as requested!");
 				}
 			}
 			catch (Exception e)

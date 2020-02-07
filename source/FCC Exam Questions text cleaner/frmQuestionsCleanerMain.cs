@@ -61,11 +61,37 @@ namespace FCC_Exam_Questions_text_cleaner
                     lblLinesRead.Text = iIndexer.ToString();
                     Application.DoEvents();
                 }
+                sTemp = QuestionFileAsStringArray[iIndexer];
                 //---- skip the "don't care" lines up front
-                if (QuestionFileAsStringArray[iIndexer] == "XXXXX" || QuestionFileAsStringArray[iIndexer] == " ") continue; // it'll be a skip line
+                if (sTemp == "XXXXX" || sTemp == " ") continue; // it'll be a skip line
                 //---- first look for question header line
                 if (!bIsQHeader) // bypass if we've found it
                 {
+                    if (sTemp.Trim().ToUpper().StartsWith("SUBELEMENT"))
+                    {
+                        if (!sTemp.ToUpper().Contains("QUESTION") || !sTemp.ToUpper().Contains("GROUP"))
+                        {
+                            try
+                            {
+                                sTemp = QuestionFileAsStringArray[iIndexer + 1];
+                                if (sTemp.ToUpper().Contains("QUESTION") || sTemp.ToUpper().Contains("GROUP"))
+                                {
+                                    sTemp = QuestionFileAsStringArray[iIndexer] + sTemp;
+                                    QuestionFileAsStringArray[iIndexer] = sTemp;
+                                    QuestionFileAsStringArray[iIndexer + 1] = "XXXXX";
+                                    iQuestionsCleaned++;
+                                    lblLinesCleaned.Text = iQuestionsCleaned.ToString();
+                                    Application.DoEvents();
+                                }
+                            }
+                            catch
+                            {
+                                MessageBox.Show(this, "Subelement error: " + QuestionFileAsStringArray[iIndexer], "Error!");
+                                return false;
+                            }
+                        }
+                        continue;
+                    }
                     if ((oRegxQheader.Match(QuestionFileAsStringArray[iIndexer])).Success)
                     {
                         sQheader = QuestionFileAsStringArray[iIndexer];

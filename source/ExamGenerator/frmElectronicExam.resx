@@ -120,22 +120,23 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPreviousQ.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAACRSURBVFhH7ZCBDsAQDER9uk/zZ7aunWC2klUl0pdcLijX
-        coZhbECMKHUwOIRwiTY1KIO98+caNJ16Yp/C0afRnrh2KpaEmzgPx9pR4f0HeMhNnPtdOypsPlEGc6Fy
-        TuGwgODvYnmnBoD+S7Je0XdJzim2Rf8j/5yh7xHQdLgmlHhrgo41WfQDNQt/wDCMLXDuAE6U966AdviG
-        AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAJFJREFUWEftkIEOwBAMRH26T/Nntq6dYLaSVSXSl1wuKNdyhmFsQIwodTA4hHCJ
+        NjUog73z5xo0nXpin8LRp9GeuHYqloSbOA/H2lHh/Qd4yE2c+107Kmw+UQZzoXJO4bCA4O9ieacGgP5L
+        sl7Rd0nOKbZF/yP/nKHvEdB0uCaUeGuCjjVZ9AM1C3/AMIwtcO4ATpT3roB2+IYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnNextQ.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAACISURBVFhH7ZBRDsAgCEM9ukfzZmxMjcYMBxlKtvAS0p9i
-        i8FxnA8DkMeIlBLgGBaJEM8xK4LhtQSqQZEW3qu4SF6uZuncl0AVFGlm6VDhvVYvWYTziIZOivAf0dD2
-        c6XEzLxSr/AMf0lHB3hL77XEacINX8RTeLGthArfhMHFI5svdhznp4RwAPC+966DeTeTAAAAAElFTkSu
-        QmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAIhJREFUWEftkFEOwCAIQz26R/NmbEyNxgwHGUq28BLSn2KLwXGcDwOQx4iUEuAY
+        FokQzzErguG1BKpBkRbeq7hIXq5m6dyXQBUUaWbpUOG9Vi9ZhPOIhk6K8B/R0PZzpcTMvFKv8Ax/SUcH
+        eEvvtcRpwg1fxFN4sa2ECt+EwcUjmy92HOenhHAA8L73roN5N5MAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAQAAAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAA
