@@ -214,6 +214,11 @@ namespace FCC_Exam_Questions_text_cleaner
 
         bool SaveTheFile()
         {
+            if (!Directory.Exists(txtOutputDirectory.Text))
+            {
+                MessageBox.Show(this, "Error: the output file directory path threw an exception", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
             StreamWriter oWriter = new StreamWriter(txtOutputDirectory.Text + "\\" + sOutputFileName);
             foreach (string s in QuestionFileAsStringArray)
             {
