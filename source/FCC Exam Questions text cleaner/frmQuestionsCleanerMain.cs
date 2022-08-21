@@ -4,6 +4,7 @@ using System.Media;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Text;
 
 
 namespace FCC_Exam_Questions_text_cleaner
@@ -32,6 +33,8 @@ namespace FCC_Exam_Questions_text_cleaner
         readonly Regex oRegxQheader = new Regex(@"^ ?[A-Z][0-9][0-9]?[A-Z][0-9].+\([ABCD]\)");
         readonly Regex oRegxQorphan = new Regex(@" [ABCD]\.");
         readonly Regex oRegxAnswer = new Regex(@"^ ?[ABCD]\.");
+        //char cOutTilde = (Encoding.UTF8.GetChars( new Byte[] {0x7e}))[0];
+
 
         /*********************** private methods **********************/
         void LoadFileIntoMemeory()
@@ -62,6 +65,14 @@ namespace FCC_Exam_Questions_text_cleaner
                     Application.DoEvents();
                 }
                 sTemp = QuestionFileAsStringArray[iIndexer];
+                sTemp = sTemp.Replace("~", " ");
+                /*
+                if (sTemp.Contains(cOutTilde.ToString()))
+                {
+                    Debug.Write("found one");
+                }
+                */
+
                 //---- skip the "don't care" lines up front
                 if (sTemp == "XXXXX" || sTemp == " ") continue; // it'll be a skip line
                 //---- first look for question header line
