@@ -9,7 +9,7 @@ I built these three applications so I could practice up for the three FCC exams 
 
 ## **About the projects**
 
-This project contains three programs: the text question pool document cleaner, the text question pool parser, and the practice exam generator. I am uploading a source file folder containing a Visual Studio 2019 solution which contains the three projects. I've clipped off all the stuff below the source code folder level except the properties folder, as you don't need those things to work with the solution initially and it will keep the download size reasonable. You can pull this solution into VS2019 or VS2022 and then compile. Note that I have set the projects to use .Net 4.7.2 (the latest as of this time). Make sure you have it installed.
+This project contains three programs: the text question pool document cleaner, the text question pool parser, and the practice exam generator. I am uploading a source file folder containing a Visual Studio 2019 solution which contains the three projects. I've clipped off all the stuff below the source code folder level except the properties folder, as you don't need those things to work with the solution initially and it will keep the download size reasonable. You can pull this solution into VS2019 and then compile. Note that I have set the projects to use .Net 4.7.2 (the latest as of this time). Make sure you have it installed.
 
 In the projects I used regular expressions (the Regex class). I needed a couple helper programs to do that. Instead of uploading them to this repository I am going to give you the URL's where to find them so that you can always have the latest versions.
 
@@ -23,7 +23,7 @@ The other thing I used is SQLite database server. It is a very small and light w
 
 The first helper I used (a lot!) is DB Browser for SQLite: [https://sqlitebrowser.org](https://sqlitebrowser.org/)
 
-The second is SQLiteStudio: <https://https://sqlitestudio.pl/>
+The second is SQLite Manager: <https://sourceforge.net/projects/sqliteman/>
 
 If you are not familiar with these helper apps please read up their documentation. There's little annoying gotchas like SQLite can't drop columns. There's a work around for it but you have to read. I have already created the database file and tables for you so you don't need to but if it gets blown away you can easily manually create it. I have included the SQLite FCC exam database create.sql file to use for that. Just open it into the sql window and execute it. You do have to create the database file itself manually but the tables and columns can be created from the SQLite FCC exam database create.sql file.
 
