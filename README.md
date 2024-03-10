@@ -3,9 +3,17 @@
 ![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
 
+## UPDATE!
+
+I have included the new question pool for the Amateur Extra exam that goes active July 1, 2024. The database is named fcc_exam_data - new Extra questions July 2024.db. Rename it just "fcc_exam_data" for it to work with the generator program. First rename the old one, THEN rename the new one. If there is notice of significant changes in the final version of the pool, I'll update the db.
+
+I have also rerun the apps on the latest update to the General License Pool which was updated and published March 6, 2024. Both databases have this update.
+
 ## **Introduction**
 
 I built these three applications so I could practice up for the three FCC exams (Technician, General, and Amateur Extra) for the Radio Amateur Service license (Ham Radio). I recently updated them and parsed in the latest exam pools. The FCC kindly gives you documents containing every exam question. The only problem is that they never proof read them and so they are a disaster for parsing. I had to invent all sorts of tricks and workarounds to get the questions into the database for the exam generator to use. Just now I also wrote a clean-up program to do some brute force clean-ups of the more obvious screw-ups. After you run it you may find some issues you'll have to hand cull from the source.
+
+Keep and any out for the infamous double tilde "~~". You'll have to do a manual find/replace in your favorite text editor. Replace it with a carriage-return, aka "\r\n".
 
 ## **About the projects**
 
