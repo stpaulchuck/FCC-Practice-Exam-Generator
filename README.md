@@ -13,11 +13,8 @@ I have also rerun the apps on the latest update to the General License Pool whic
 
 I built these three applications so I could practice up for the three FCC exams (Technician, General, and Amateur Extra) for the Radio Amateur Service license (Ham Radio). I recently updated them and parsed in the latest exam pools. The FCC kindly gives you documents containing every exam question. The only problem is that they never proof read them and so they are a disaster for parsing. I had to invent all sorts of tricks and workarounds to get the questions into the database for the exam generator to use. Just now I also wrote a clean-up program to do some brute force clean-ups of the more obvious screw-ups. After you run it you may find some issues you'll have to hand cull from the source.
 
-<<<<<<< HEAD
-Keep and eye out for the infamous double tilde "~~". You'll have to do a manual find/replace in your favorite text editor. Replace it with a carriage-return, aka "\r\n".
-=======
-Keep and any out for the infamous double tilde "~~". You'll have to do a manual find/replace in your favorite text editor. Replace it with a carriage-return, aka "\r\n".
->>>>>>> bfa0c129d18d72dc0c582bfdabd6cc7d4a414023
+Keep an eye out for the infamous double tilde "~~". You'll have to do a manual find/replace in your favorite text editor. Replace it with a carriage-return, aka "\r\n".
+
 
 ## **About the projects**
 
