@@ -20,6 +20,13 @@ namespace ExamGenerator
 			}
 		}
 
+		private bool m_bIsPractice = false;
+		public bool IsPracticeExam
+		{
+			set { m_bIsPractice = value; }
+			get { return m_bIsPractice; }
+		}
+
 
 		/**************************** global vars ***********************************/
 		Dictionary<string, string[]> CorrectAnswersDic = new Dictionary<string, string[]>(); // (qnum, [correct ans., student ans.])
@@ -71,6 +78,7 @@ namespace ExamGenerator
 			if (m_QuestionPool.Count < 1)
 				throw new Exception("you didn't load any questions!!");
 			RandomizeQuestionList();
+			TQholder.IsPracticeExam = m_bIsPractice;
 			LoadQuestion(iTQptr);
 		}
 

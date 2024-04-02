@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace ExamGenerator
 {
@@ -21,7 +22,7 @@ namespace ExamGenerator
 	{
 		/**************************** vars ***************************************/
 		enum TestType { Regular, SubelementTest };
-		bool bInitializing = true;
+		bool bInitializing = true, bLearmModeOn = false;
 		DataTable oDescTable = new DataTable(), oQTable = new DataTable(); // holds selected element data
 		DataTable oDescMasterTable = new DataTable(), oQMasterTable = new DataTable(); // holds all data
 		Timer oTimeDelay = new Timer();
@@ -40,6 +41,56 @@ namespace ExamGenerator
 
 
 		/****************************** events ************************************/
+
+		private void btnRun_Click(object sender, EventArgs e)
+		{
+			btnRun.Enabled = false;
+			if (udElementNumber.Value <= 1)
+			{
+				txtStatus.Text = "Need Element Number!";
+				MessageBox.Show(this, "Please set the Element number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				btnRun.Enabled = true;
+				return;
+			}
+			if (oQTable.Rows.Count == 0)
+			{
+				txtStatus.Text = "No questions available for this Element";
+				MessageBox.Show(this, "There are no questions in the file for Element " + udElementNumber.Value.ToString("0"));
+				return;
+			}
+			if (rbElectronicExam.Checked)
+			{
+				this.WindowState = FormWindowState.Minimized;
+			}
+			bool retVal = CreateExam();
+			if (rbElectronicExam.Checked)
+			{
+				this.WindowState = FormWindowState.Normal;
+			}
+			this.BringToFront();
+			this.Focus();
+			btnRun.Enabled = true;
+			if (!retVal)
+				return;
+			SaveSettings();
+		}
+
+		private void btnLearnMode_Click(object sender, EventArgs e)
+		{
+			if (((Button)sender).Text == "Learn Mode")
+			{
+				((Button)sender).Text = "Learn Mode Active!";
+				((Button)sender).BackColor = Color.LightGreen;
+				bLearmModeOn = true;
+			}
+			else
+			{
+				((Button)sender).Text = "Learn Mode";
+				((Button)sender).BackColor = SystemColors.Control;
+				bLearmModeOn = false;
+			}
+		}
+
 		private void btnSelectDB_Click(object sender, EventArgs e)
 		{
 			txtStatus.Text = "Attempting to locate data file.";
@@ -104,38 +155,6 @@ namespace ExamGenerator
 			this.Close();
 		}
 
-		private void btnRun_Click(object sender, EventArgs e)
-		{
-			btnRun.Enabled = false;
-			if (udElementNumber.Value <= 1)
-			{
-				txtStatus.Text = "Need Element Number!";
-				MessageBox.Show(this, "Please set the Element number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				btnRun.Enabled = true;
-				return;
-			}
-			if (oQTable.Rows.Count == 0)
-			{
-				txtStatus.Text = "No questions available for this Element";
-				MessageBox.Show(this, "There are no questions in the file for Element " + udElementNumber.Value.ToString("0"));
-				return;
-			}
-			if (rbElectronicExam.Checked)
-			{
-				this.WindowState = FormWindowState.Minimized;
-			}
-			bool retVal = CreateExam();
-			if (rbElectronicExam.Checked)
-			{
-				this.WindowState = FormWindowState.Normal;
-			}
-			this.BringToFront();
-			this.Focus();
-			btnRun.Enabled = true;
-			if (!retVal)
-				return;
-			SaveSettings();
-		}
 
 		private void rbRegularTest_CheckedChanged(object sender, EventArgs e)
 		{
@@ -387,7 +406,7 @@ namespace ExamGenerator
 			Properties.Settings.Default.Save();
 		}
 
-		private bool CreateExam()
+        private bool CreateExam()
 		{
 			DataRow[] oSubnames = { };
 			int iHowMany = -1;
@@ -450,6 +469,7 @@ namespace ExamGenerator
 				}
 			}
 			clsExamPrinter oPrinter = new clsExamPrinter(oQRows);
+			
 			oPrinter.HowMany = iHowMany;
 			oPrinter.GroupInfo = oSubnames;
 			oPrinter.OutputFileName = OutputFileForm.txtOutputFileName.Text;
@@ -458,6 +478,7 @@ namespace ExamGenerator
 			oPrinter.RandomizeAnswers = Properties.Settings.Default.RandomizeAnswers;
 			if (rbElectronicExam.Checked) oPrinter.OutputType = OutputTypeEnum.Desktop;
 			else if (rbTextFileExam.Checked) oPrinter.OutputType = OutputTypeEnum.TxtFile;
+			oPrinter.bLearnMode = bLearmModeOn;
 
 			//---- do it!
 			return oPrinter.PrintExam();

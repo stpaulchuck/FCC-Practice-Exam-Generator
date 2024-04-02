@@ -20,6 +20,7 @@ namespace ExamGenerator
 		public DataRow[] GroupInfo = new DataRow[0];
 		public OutputTypeEnum OutputType = OutputTypeEnum.Desktop;
 		public bool RandomizeAnswers = true;
+		public bool bLearnMode = false;
 
 		int iPoolSize = 0, iHowMany = 0;
 		const int iTechGenTestSize = 35; // in case it changes, just one item to update
@@ -316,7 +317,7 @@ namespace ExamGenerator
 			return retVal;
 		}
 
-		private bool PrintTheFile(List<DataRow> OutputPool)
+        private bool PrintTheFile(List<DataRow> OutputPool)
 		{
 			switch (OutputType)
 			{
@@ -401,6 +402,7 @@ namespace ExamGenerator
 			try
 			{
 				ElectronicExamForm.QuestionPool = Questions;
+				ElectronicExamForm.IsPracticeExam = bLearnMode; 
 				if (ElectronicExamForm.ShowDialog() == DialogResult.OK)
 					return true;
 				else

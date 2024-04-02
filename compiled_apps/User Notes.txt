@@ -1,0 +1,89 @@
+﻿User Notes
+-----------------------------------------------------------------------------------------
+
+   This software requires MS .Net Framework version 4.7.2. If you haven't yet downloaded and installed it, you can get it from MS at 
+	https://support.microsoft.com/en-us/help/4054530/microsoft-net-framework-4-7-2-offline-installer-for-windows
+
+-----------------------------------------------------------------------------------------
+
+GENERAL NOTES
+
+To run the programs you first need to create data files for the exam generator to use. You use the Test Pool
+Parser program to do that. The raw pool question documents need a little trimming of non essential info to
+make them usable by the parser. If you are using new pool files, instructions are below. Otherwise I have
+supplied parsed files of the current pool questions (2/25/2022).
+
+Once you have the pool question data formatted into either delimited text files or into a SQLite database, the
+Exam Generator can create practice exams for you. Your choices are pretty straight forward. You can practice
+with the normal spread of questions across all the subelements and groups, or you can concentrate on a 
+particular subelement only. You can practice with either a Windows based electronic exam, or you can
+generate a text file for 'hard copy' practice. You can choose how many questions and whether or not to
+choose with the normal distribution of questions per subelement or totally randomly across the entire pool.
+
+-------------------------------------------------------------------------------------------
+
+TEST POOL PARSER PROGRAM
+[NOTE: I have supplied edited files of the pools current as of March 2, 2024. If a newer version has been
+	published you'll need to set it up as below here. Here's the link to the latest pools http://www.ncvec.org]
+
+1. First make a working text copy of the test pool document(s) which are in PDF format. I recommend 
+	https://www.4dots-software.com/free-pdf-to-text-converter/ . It's quick and pretty accurate. MS Word 2016 and
+    later can now ingest PDF files and export at Word documents or text but it does make mistakes by the time you 
+    do the second convert to text. Soft carriage returns sometimes morph into hard returns for instance.
+
+2. Next, edit the test pool document copy.
+	a. clip off all text leading up to the beginning of the actual pool. For the General Exam Pool the useful text 
+	   starts with "SUBELEMENT G1...". All the text before that is not needed so delete it.
+	b. clip off all diagrams and other items after the last question's last answer.
+
+3. Save the edited document. I usually add to the document title " - preped" to make sure which version it is 
+   (i.e., "2016- 2020 Extra Class Pool Final with errata 3rd release - prepped.txt").
+
+4. Scan through the document for glaring errors. In the General pool document they left the word "SUBELEMENT" off the
+   front of sub element G7's title line so that sub element did not get parsed originally. I find lots of missing <CR><LF>.
+   Turn on your editor's reveal for carriage returns or you'll miss it. There are a lot of answers that are missing a
+   carriage return as well depending on the PDF to text converter you use.
+
+5. If you are going to output the parsed pool into *.csv files, you can either manually type in a name in the two
+   text boxes or you can search out existing files to place the data into. This way you can insure that all the
+   data is captured into the same files for all the elements (one file for all questions, one for descriptive data).
+   Normally there will be just the two files - questions and descriptions, holding all elements.
+
+6.	Every time the parser stops and indicates a bad/malformed input you can leave it running but after you edit the question 
+    in the txtfile you will need to reload it by clicking the 'Reload' button.
+
+7. During operation of the Parser, any time you select a new file to parse you will have to set the element number
+   manually. I thought about some sort of automatic method, but this way insures the correct element number regardless
+   of the text file contents or titling. [Edit:] I did add auto sensing of the element number but be darn sure to verify it!
+
+8. The Parser remembers your last successful setting for the next startup.
+
+--------------------------------------------------------------------------------------------
+
+document clean up notes:
+you'll find these pool documents to be very amateurish
+
+-multiple hard carriage returns in the question or answer text. The Parser can handle a single 'extra' carriage return that splits a line, but not multiples.
+-dashes. The Parser can change out em dash and en dashes but there seems to be another odd one so if you can't figure out the issue, replace all the dashes
+-Answer Key answers. Make sure the question names and the answer names match.
+-ABCD answers laid out wrong. There should be one answer per line. Sometimes there are two to a line. reformat them.
+-ABCD answers. Sometimes a comma instead of a period "D," or none at all "D"
+
+--------------------------------------------------------------------------------------------
+
+	This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+   enjoy!
+   73's, Chuck AD0QK

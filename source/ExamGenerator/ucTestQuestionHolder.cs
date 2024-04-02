@@ -8,6 +8,7 @@ namespace ExamGenerator
 	{
 		/********************** public vars ************************/
 		public event ExamFormChoiceEvent ChoiceEvent;
+		public bool IsPracticeExam;
 
 		/********************** private vars*********************/
 		private bool bIsLocked = false;
@@ -35,6 +36,18 @@ namespace ExamGenerator
 			txtAnswerC.Text = QuestionInfo.AnswerC;
 			txtAnswerD.Text = QuestionInfo.AnswerD;
 			QuestionNumber = QuestionInfo.QuestionNumber;
+			if (IsPracticeExam)
+			{
+				try
+				{
+					((Label)(this.Controls.Find("lblAnswer" + CorrectAnswerChoice, true)[0])).BackColor = Color.LightGreen;
+				}
+				catch
+				{
+					var x = 5;
+				}
+			}
+			
 			string sPreviousChoice = QuestionInfo.CorrectAnswerLetter[1];
 			if (sPreviousChoice == "")
 				return; // no previous choice made
